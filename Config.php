@@ -69,12 +69,7 @@ class Config extends \yii\db\ActiveRecord
      */
     public function set($key, $value = null, $bigValue = null) {
         $config = $this->get($key);
-
-        if (!$config) {
-            $config = new self();
-            $config->key = $key;
-        }
-
+        $config->key = $key;
         $config->value = $value;
         $config->big_value = $bigValue;
         $config->save();

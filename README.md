@@ -58,3 +58,25 @@ After that, you can open the pages as:
 /admin/config/view
 /admin/config/index
 ```
+
+Conponent
+-----
+Register the package as a component
+
+```php
+'components' => [
+    'config' => [
+        'class' => 'shoxabbos\config\Config',
+    ],
+]
+```
+
+##### Get config
+```php
+\Yii::$app->config->get('key');
+```
+
+##### Set config
+```php
+\Yii::$app->config->set('key', 'varchar 255', 'text');
+```
