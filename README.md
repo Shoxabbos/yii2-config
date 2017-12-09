@@ -1,6 +1,6 @@
 Yii2 config
 ===========
-Yii2 config
+Yii2 simple config
 
 Installation
 ------------
@@ -27,5 +27,29 @@ Usage
 
 Once the extension is installed, simply use it in your code by  :
 
+##### Run migrations
 ```php
-<?= \shoxabbos\config\AutoloadExample::widget(); ?>```
+./yii migrate  --migrationPath="@shoxabbos/config"
+```
+
+
+##### Controller map
+For example: adding settings pages to admin module
+```php
+'modules' => [
+    'admin' => [
+        'class' => 'app\modules\admin\Module',
+        'controllerMap' => [
+            'config' => 'shoxabbos\config\controllers\ConfigController'
+        ]
+    ],
+]
+```
+
+After that, you can open the pages as:
+```php
+/admin/config/create
+/admin/config/update
+/admin/config/view
+/admin/config/index
+```
