@@ -1,0 +1,21 @@
+{
+    "name": "shoxabbos/yii2-config",
+    "description": "Yii2 config",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shoxabbos",
+            "email": "19941001@inbox.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "shoxabbos\\config\\": ""
+        }
+    }
+}
