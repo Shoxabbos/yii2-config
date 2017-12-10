@@ -16,7 +16,7 @@ class m171209_101930_create_simple_config_table extends Migration
             'id' => $this->primaryKey(),
             'key' => $this->string(255)->notNull(),
             'value' => $this->string(255)->null(),
-            'big_value' => $this->string()->null()
+            'big_value' => $this->text()->null()
         ]);
     }
 
