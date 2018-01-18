@@ -50,13 +50,24 @@ class Config extends \yii\db\ActiveRecord
 
     /**
      * @param $key
-     * @return null|static
+     * @param null $value
+     * @return mixed|null|Config|static
      */
-    public function get($key) {
-        $config = self::findOne(['key' => $key]);
+    public function get($key, $value = null, $cacheDuration = 3600) {
+
+        $config = Yii::$app->cache->get('config-'.$key);
+
+        if ($config === false) {
+            $config = self::findOne(['key' => $key]);
+            Yii::$app->cache->set('config-'.$key, $config, $cacheDuration);
+        }
 
         if (!$config) {
             $config = new self();
+        }
+
+        if ($value) {
+            return $config->getAttribute($value);
         }
 
         return $config;

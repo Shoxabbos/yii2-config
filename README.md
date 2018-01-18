@@ -71,9 +71,19 @@ Register the package as a component
 ]
 ```
 
-##### Get config
+##### Get config object
 ```php
 \Yii::$app->config->get('key');
+```
+
+##### Get config object property
+```php
+\Yii::$app->config->get('key', 'propertyName');
+```
+
+##### Set cache duration
+```php
+\Yii::$app->config->get('key', 'propertyName', 3600 * 24);
 ```
 
 ##### Set config
